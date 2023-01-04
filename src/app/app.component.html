@@ -13,5 +13,62 @@
     </button>
   </div>
 </div>
+<mat-sidenav-container class="w-100" style="min-height: 100hv">
+  <mat-sidenav
+    class="w-100 p-3 h-100 bg-black d-flex justify-content-start align-items-center flex-column"
+    [position]="'start'"
+    #drawer
+  >
+    <div class="w-100 d-flex justify-content-end align-items-center">
+      <mat-icon
+        class="d-inline-flex justify-content-end align-items-center fw-bold text-white"
+        style="height: 40px; width: 40px; font-size: xx-large"
+        (click)="drawer.close()"
+      >
+        close
+      </mat-icon>
+    </div>
+    <div
+      class="bg-black w-100 d-flex d-md-none flex-column justify-content-center align-items-center h-50"
+    >
+      <div
+        class="my-auto w-100 d-flex flex-column justify-content-center align-items-center"
+      >
+        <div
+          class="w-100 text-center text-white my-1 fw-bold"
+          *ngFor="let route of router.config"
+          [routerLink]="route.path"
+          [routerLinkActive]="'buttonblue'"
+          (click)="drawer.close()"
+        >
+          {{ route.title }}
+        </div>
+      </div>
+    </div>
+  </mat-sidenav>
 
-<router-outlet> </router-outlet>
+  <mat-sidenav-content>
+    <div
+      class="w-100 bg-black position-fixed d-block"
+      style="height: 60px; z-index: 51; font-size: 50px"
+    >
+      <div
+        class="w-100 h-100 d-flex justify-content-end align-items-center px-1"
+      >
+        <button
+          class="btn btn-transparent text-white fw-bold px-2"
+          (click)="drawer.toggle()"
+        >
+          <mat-icon
+            class="d-inline-flex justify-content-end align-items-center fw-bold"
+            style="height: 40px; width: 40px; font-size: xx-large"
+          >
+            list
+          </mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <router-outlet> </router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
