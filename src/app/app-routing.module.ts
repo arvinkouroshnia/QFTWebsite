@@ -32,7 +32,7 @@ const routes: Routes = [
     path: ':any',
     redirectTo: '/home',
     pathMatch: 'full',
-  }
+  } //
 ];
 
 @NgModule({
