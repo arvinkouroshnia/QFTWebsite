@@ -11,6 +11,7 @@ import { SafeUrlPipe } from './safe-url.pipe';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { MatSidenavModule } from'@angular/material/sidenav';
 import { MatIconModule } from'@angular/material/icon';
+import { NgxFeynmanModule } from 'ngx-feynman';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MatIconModule } from'@angular/material/icon';
     AppRoutingModule,
     NgxExtendedPdfViewerModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    NgxFeynmanModule
   ],
   providers: [],
   bootstrap: [AppComponent]
